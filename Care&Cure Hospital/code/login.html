@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Login</title>
+
+	<!-- Demo CSS (No need to include it into your project) -->
+	<link rel="stylesheet" href="css/demo.css">
+<style>
+:root{
+    --success-color: #2ecc71;;
+    --error-color: #e74c3c;
+}
+.container{
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    width: 400px;
+    margin: 10px auto;
+}
+
+h2{
+    text-align: center;
+    margin: 0 0 20px;
+}
+
+.form{
+    padding: 30px 40px;
+}
+
+.form-control{
+    margin-bottom: 10px;
+    padding-bottom: 20px;
+    position: relative;
+}
+
+.form-control label{
+    color:#777;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-control input
+{
+    border: 2px solid #f0f0f0;
+    border-radius: 4px;
+    display: block;
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+}
+
+.form-control input:focus{
+    outline: 0;
+    border-color: #777;
+
+}
+
+.form-control.success input {
+    border-color: var(--success-color);
+}
+
+.form-control.error input {
+    border-color: var(--error-color);
+}
+
+.form-control small{
+    color: var(--error-color);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    visibility: hidden;
+}
+
+.form-control.error small{
+    visibility: visible;
+}
+.form button {
+    cursor: pointer;
+    background-color: #3498db;
+    border: 2px solid #3498db;
+    border-radius: 4px;
+    color: #fff;
+    display: block;
+    padding: 10px;
+    font-size: 16px;
+    margin-top:20px;
+    width:100%;
+}
+
+</style>
+  </head>
+  <body>
+  <br/>
+  <br/>
+  <br/>
+  <br/>
+  <br/>
+ <header class="intro">
+     <center><h1>Admin Login</h1></center>
+     <div class="action"></div>
+ </header>
+
+ <main>
+ <div class="container">
+        <form id="form" class="form" name="myform1" action="index.html" onsubmit="return VALIDITY()"  method="post">
+            <div class="form-control">
+                <label for="username">Username</label>
+                <input type="text" id="username"
+name="Name" placeholder="Enter username"/>
+                <small>Error Message</small>
+            </div>
+            <div class="form-control">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="Password" placeholder="Enter password"/>
+                <small>Error Message</small>
+            </div>
+            <div class="form-control">
+                <input type="submit" onclick="login()" value="Login" name="login"/>
+            </div>
+        </form>
+ </div>
+ </main>
+  <center>
+  <h1 class="text-uppercase text-center">Patient access</h1>
+          <p>Patients visiting the website can access the website without registering as well,
+              <a href="indexp.html">click here to visit</a>
+          </p>
+  </center>
+<script> 
+ function VALIDITY() {
+        var name = document.forms["myform1"]["Name"];
+        var pwd = document.forms["myform1"]["Password"];
+ if (name.value != "admin") {
+            window.alert("Please enter your valid username.");
+            name.focus();
+            return false;
+        }
+  
+        if (pwd.value != "123") {
+            window.alert("Please enter your valid password.");
+            password.focus();
+            return false;
+        }
+return true ;
+}
+</script>
+  </body>
+</html>
